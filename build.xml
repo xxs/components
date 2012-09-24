@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<project name="component" default="buildall" basedir="./">
+
+	<property file="build.properties" /> 
+	<property name="tempdir"  value="d:/server/temp" />
+	
+	<!--要编译的类目录-->
+	<property name="build.dir"  value="${tempdir}/classes" />
+
+	<!--classpath-->
+	<path id="buildpath">
+    	<fileset dir="third-party-lib">
+    		  <include name="**/*.jar"/>   
+		</fileset>	
+    	<fileset dir="javashop-lib">
+    		  <include name="**/*.jar"/>   
+		</fileset>		
+	    <dirset dir="${build.dir}">   
+	    </dirset>  		  	
+	</path>
+
+	<target name="clean">
+    	
+    	<!--创建编译目录-->
+    	<delete dir="${tempdir}"></delete>
+    	<mkdir dir="${build.dir}"/>
+    	<mkdir dir="${tempdir}/lib"/>
+		
+	</target>
+ 
+	
+    <target name="jar_component"  >
+    	
+    	<delete dir="${build.dir}/${name}"/>
+    	<mkdir dir="${build.dir}/${name}"/>
+    	<!--编译目录下的类文件-->
+        <javac srcdir="." destdir="${build.dir}/${name}"  debug="true" >
+        	<classpath refid="buildpath"></classpath>
+        	<include name="${name}/**"/>
+        
+        </javac>
+    	
+    	<echo message="${build.dir}" />
+    	<!--拷贝资源文件-->
+    	<copy todir="${build.dir}/${name}" >
+    	   <fileset dir="${name}" >
+    	   		<exclude name="**/*.java"/>
+    	   	</fileset>
+ 
+    	</copy>
+    	<delete dir="${tempdir}/lib/component-${name}-${version}.jar"/>
+    	<!--生成组件jar-->
+  	  	<jar destfile="${tempdir}/lib/component-${name}-${version}.jar">
+  	    	<fileset dir="${build.dir}/${name}" >
+  	    		<include name="com/enation/app/shop/component/**"/>
+  	  		</fileset>
+  	 	</jar>
+
+    </target>	
+	
+	<!--充值和提现组件-->
+	<target name="jar_deposit" >
+				  <antcall target="jar_component">
+				    <param name="name" value="deposit"/>
+				  	<param name="version" value="1.0"/>
+				  </antcall>
+	</target>
+	<!--充值和提现组件for  rechange-->
+	<target name="jar_rechange" >
+				  <antcall target="jar_component">
+				    <param name="name" value="rechange"/>
+				  	<param name="version" value="1.0"/>
+				  </antcall>
+	</target>
+	<!--银行卡组件-->
+	<target name="jar_bank" >
+				  <antcall target="jar_component">
+				    <param name="name" value="bank"/>
+				  	<param name="version" value="2.0"/>
+				  </antcall>
+	</target>
+
+	
+	<!-- 构建所有组件 -->
+	<target name="buildall" >
+			<antcall target="jar_rechange"></antcall>
+	</target>	
+</project>

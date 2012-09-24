@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="充值和提现组件"  version="1.0" javashop_version="3.0.0" author="javashop">
+	<plugins>
+		<plugin name="银行卡插件" id="bankAdminPlugin">
+			<bundle id="memberPluginBundle"></bundle>
+		</plugin>
+		<plugin name="易宝支付插件" id="yeepayPlugin">
+ 			<bundle id="paymentPluginBundle"></bundle>
+ 		</plugin>	
+	</plugins> 
+	<widgets>
+		<widget id="bank" name="银行卡挂件"></widget>
+		<widget id="withdraw" name="充值卡提现挂件"></widget>
+		<widget id="discount" name="收卡折扣挂件"></widget>
+		<widget id="rechange_checkout" name="充值卡结算挂件"></widget>
+		<widget id="deposit" name="提现挂件"></widget>
+		<widget id="yeepay" name="易宝支付挂件"></widget>
+		<widget id="isDisposit" name="判断是否可提现挂件"></widget>
+	</widgets>
+</component>
