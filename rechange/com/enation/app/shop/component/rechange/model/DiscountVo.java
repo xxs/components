@@ -4,7 +4,7 @@ import com.enation.app.shop.core.model.Cat;
 
 
 /***
- * 折扣率实体
+ * 折扣率实体 
  * @author xxs
  *
  */
