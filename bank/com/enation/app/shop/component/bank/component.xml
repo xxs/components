@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="银行卡组件"  version="1.0" javashop_version="3.0.0" author="javashop">
+	<plugins>
+		<plugin name="银行卡插件" id="bankAdminPlugin">
+			<bundle id="memberPluginBundle"></bundle>
+		</plugin>	
+	</plugins> 
+	<widgets>
+		<widget id="bank" name="银行卡挂件"></widget>
+		<widget id="withdraw" name="充值卡提现挂件"></widget>
+	</widgets>
+</component>

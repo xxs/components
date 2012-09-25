@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbsolution>
+	<!-- 移除会员银行卡信息表 -->
+	<action>
+		<command>drop</command>
+		<table>member_bank</table>
+	</action>
+	<!-- 移除会员提现申请单据表 -->
+	<action>
+		<command>drop</command>
+		<table>member_withdraw</table>
+	</action>
+</dbsolution>

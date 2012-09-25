@@ -59,9 +59,9 @@
     </target>	
 	
 	<!--充值和提现组件-->
-	<target name="jar_deposit" >
+	<target name="jar_hello" >
 				  <antcall target="jar_component">
-				    <param name="name" value="deposit"/>
+				    <param name="name" value="hello"/>
 				  	<param name="version" value="1.0"/>
 				  </antcall>
 	</target>
@@ -76,7 +76,7 @@
 	<target name="jar_bank" >
 				  <antcall target="jar_component">
 				    <param name="name" value="bank"/>
-				  	<param name="version" value="2.0"/>
+				  	<param name="version" value="1.0"/>
 				  </antcall>
 	</target>
 
@@ -84,5 +84,7 @@
 	<!-- 构建所有组件 -->
 	<target name="buildall" >
 			<antcall target="jar_rechange"></antcall>
+			<antcall target="jar_hello"></antcall>
+			<antcall target="jar_bank"></antcall>
 	</target>	
 </project>

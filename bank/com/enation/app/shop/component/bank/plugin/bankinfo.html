@@ -1,0 +1,52 @@
+
+<div id="Member_Form_Point_" class="division">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+
+<#if memberBankList?exists && memberBankList?size gt 0>
+<tbody>
+		<tr>
+			<th style="text-align:center;">编号</th>
+			<th style="text-align:center;">银行账号</th>
+			<th style="text-align:center;">开户姓名</th>
+			<th style="text-align:center;">银行名称</th>
+			<th style="text-align:center;">银行所在省份</th>
+			<th style="text-align:center;">创建日期</th>
+			<th style="text-align:center;">是否默认</th>
+		</tr>
+		<#list memberBankList as memberBank>
+		<tr>
+			<td align="center">
+				${memberBank_index + 1}
+			</td>
+			<td align="center">
+				${memberBank.banknum!'' }
+			</td>
+			<td align="center">
+				${memberBank.openname!'' }
+			</td>
+			<td align="center">
+				${memberBank.bankname!'' }
+			</td>
+			<td align="center">
+				${memberBank.bankcity!'' }
+			</td>
+			<td align="center">
+				<@dateformat time="${memberBank.createtime*1000}" pattern="yyyy-MM-dd HH:mm:ss"/>
+			</td>
+			
+			<td align="center">
+				<#if memberBank.state == 1 >是</#if><#if memberBank.state == 0 >否</#if>
+			</td>
+		</tr>
+		</#list>
+	</tbody>
+<#else>
+	<tbody>
+		<tr>
+			<td>暂无银行卡信息</td>
+		</tr>
+	</tbody>
+</#if>
+</table>
+
+

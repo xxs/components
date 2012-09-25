@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbsolution>
+	<!-- 会员银行卡信息表 -->
+	<action> 
+		<command>create</command>
+		<table>member_bank</table>
+		<field><name>bankid</name><type>int</type><size>8</size><option>11</option></field>
+		<field><name>memberid</name><type>int</type><size>8</size><option>00</option></field><!-- 用户ID -->
+		<field><name>bankname</name><type>varchar</type><size>20</size><option>00</option></field><!-- 银行名称 -->
+		<field><name>bankcity</name><type>varchar</type><size>255</size><option>00</option></field><!-- 银行所在城市 -->
+		<field><name>openname</name><type>varchar</type><size>255</size><option>00</option></field><!-- 开户名 -->
+		<field><name>banknum</name><type>varchar</type><size>255</size><option>00</option></field><!-- 银行卡号 -->
+		<field><name>memo</name><type>varchar</type><size>255</size><option>00</option></field><!-- 备注 -->
+		<field><name>state</name><type>int</type><size>8</size><option>00</option><default>0</default></field><!-- 状态:0可用，1禁用 -->
+		<field><name>createtime</name><type>long</type><size>10</size><option>00</option></field> <!-- 添加时间  -->
+		<field><name>updatetime</name><type>long</type><size>10</size><option>00</option></field> <!-- 修改时间  -->
+	</action>
+	<!-- 会员提现申请单据表 -->
+	<action> 
+		<command>create</command>
+		<table>member_withdraw</table>
+		<field><name>withdrawid</name><type>int</type><size>8</size><option>11</option></field>
+		<field><name>sn</name><type>varchar</type><size>200</size><option>00</option></field><!-- 提现单据号 -->
+		<field><name>memberid</name><type>int</type><size>8</size><option>00</option></field><!-- 用户ID -->
+		<field><name>money</name><type>decimal</type><size>20</size><option>00</option><default>0.000</default></field><!-- 提现金额 -->
+		<field><name>message</name><type>varchar</type><size>255</size><option>00</option></field><!-- 提款说明 -->
+		<field><name>bankid</name><type>int</type><size>8</size><option>00</option></field><!-- 用户银行信息ID -->
+		<field><name>memo</name><type>varchar</type><size>255</size><option>00</option></field><!-- 备注 -->
+		<field><name>state</name><type>int</type><size>8</size><option>00</option><default>0</default></field><!-- 状态:0申请中，1通过，2作废 -->
+		<field><name>rememo</name><type>varchar</type><size>255</size><option>00</option></field><!-- 作废说明 -->
+		<field><name>createtime</name><type>long</type><size>10</size><option>00</option></field> <!-- 创建时间  -->
+		<field><name>updatetime</name><type>long</type><size>10</size><option>00</option></field> <!-- 处理时间  -->
+	</action>
+</dbsolution>

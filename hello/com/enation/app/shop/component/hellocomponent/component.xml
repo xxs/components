@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="Hello组件"  version="1.0" javashop_version="3.0.0" author="javashop">
+	<plugins>
+	
+		<plugin name="Hello插件" id="helloPlugin">
+ 			<bundle id="goodsPluginBundle"></bundle>
+ 		</plugin>
+ 		<widgets>
+			<widget id="hello_component" name="Hello挂件"></widget>
+		</widgets>		 		
+	</plugins>
+</component>
