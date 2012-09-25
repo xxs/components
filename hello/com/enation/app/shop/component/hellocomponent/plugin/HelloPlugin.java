@@ -17,8 +17,8 @@ public class HelloPlugin extends AutoRegisterPlugin implements
 
 	@Override
 	public String getTabName() {
-		 
-		return "helslo";
+		
+		return "hello";
 	}
 
 }
