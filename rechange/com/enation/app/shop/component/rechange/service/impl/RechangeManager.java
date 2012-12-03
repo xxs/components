@@ -387,7 +387,7 @@ public class RechangeManager extends BaseSupport  implements
 			advanceLogs.setShop_advance(dpeice);
 			advanceLogs.setMember_advance(dpeice);
 		}
-		advanceLogs.setDisabled("true");  //状态为申请状态，为false则为已起效。
+		advanceLogs.setDisabled("false");  //状态为申请状态，为false则为已起效。(在线充值，直接起效)
 		advanceLogsManager.add(advanceLogs);
 		
 	}
