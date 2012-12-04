@@ -1,5 +1,6 @@
 package com.enation.app.shop.component.rechange.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.enation.app.shop.component.rechange.model.DiscountVo;
@@ -23,4 +24,6 @@ public interface IGoodsDiscountManager {
 	public List<DiscountVo> getDiscountVoList();
 	
 	public GoodsDiscount getDiscountByCatId(Integer catId);
+	//统计日成交额
+	public int gettotlenum(Date begin,Date end);
 }

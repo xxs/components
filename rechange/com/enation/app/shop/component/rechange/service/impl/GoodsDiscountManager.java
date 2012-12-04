@@ -1,6 +1,7 @@
 package com.enation.app.shop.component.rechange.service.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -121,6 +122,14 @@ public class GoodsDiscountManager extends BaseSupport implements
 		}else{
 			return null;
 		}
+	}
+
+	@Override
+	public int gettotlenum(Date begin, Date end) {
+		String sql = "select sum(money) from es_payment_logs where create_time >= "+ begin.getTime()+" and create_time <="+end.getTime();
+		System.out.println("统计销售额的sql："+sql);
+		int result = this.baseDaoSupport.queryForInt(sql, null);
+		return result;
 	}
 
 }
