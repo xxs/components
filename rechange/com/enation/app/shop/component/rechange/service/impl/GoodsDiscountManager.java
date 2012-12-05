@@ -128,7 +128,8 @@ public class GoodsDiscountManager extends BaseSupport implements
 	public int gettotlenum(Date begin, Date end) {
 		String sql = "select sum(money) from es_payment_logs where create_time >= "+ begin.getTime()+" and create_time <="+end.getTime();
 		System.out.println("统计销售额的sql："+sql);
-		int result = this.baseDaoSupport.queryForInt(sql, null);
+		int result = this.baseDaoSupport.queryForInt(sql);
+		System.out.println("result:"+result);
 		return result;
 	}
 
